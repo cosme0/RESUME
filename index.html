@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume – Ken Kevin T. Cabnalan</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted:#475569;
+      --accent:#2563eb;
+      --chip:#eef2ff;
+      --border:#e2e8f0;
+      --card:#ffffff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --fg:#e5e7eb;
+        --muted:#94a3b8;
+        --accent:#60a5fa;
+        --chip:#1e293b;
+        --border:#1f2937;
+        --card:#0f172a;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    h1,h2,h3{margin:0 0 .5rem; line-height:1.2}
+    h1{font-size:2rem}
+    h2{font-size:1.05rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted)}
+    p{margin:.25rem 0 .75rem}
+    a{color:inherit; text-decoration:none}
+
+    .page{
+      max-width: 1000px;
+      margin: 24px auto;
+      padding: 0 16px 24px;
+    }
+
+    .header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items:center;
+      padding: 24px;
+      border:1px solid var(--border);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 30px -12px rgba(0,0,0,.15);
+    }
+    .title{display:flex; flex-direction:column; gap:.35rem}
+    .name{font-size:2rem; font-weight:800}
+    .role{font-weight:500; color:var(--muted)}
+
+    .contact{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:12px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    .contact a{display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--border); border-radius:12px; background:transparent}
+    .contact svg{width:16px; height:16px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .sidebar{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius:20px;
+      padding:20px;
+      position:sticky;
+      top:16px;
+      height:fit-content;
+    }
+    .avatar img{
+      width:100%;
+      border-radius:16px;
+      border:1px solid var(--border);
+      margin-bottom:16px;
+    }
+    .section{margin-bottom:18px}
+    .chipset{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{border:1px solid var(--border); background:var(--chip); padding:6px 10px; border-radius:999px; font-size:.9rem}
+    .list{list-style:none; padding:0; margin:0}
+    .list li{padding:.4rem 0; border-bottom:1px dashed var(--border)}
+    .list li:last-child{border-bottom:none}
+
+    .main{
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .card{
+      border:1px solid var(--border); background:var(--card); border-radius:20px; padding:20px;
+    }
+    .item{display:grid; grid-template-columns: 1fr auto; gap:8px; padding:12px 0; border-bottom:1px dashed var(--border)}
+    .item:last-child{border-bottom:none}
+    .item .place{font-weight:700}
+    .item .meta{color:var(--muted); font-size:.95rem}
+    .bullets{margin:.25rem 0 0 1.1rem}
+
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+    .badge{border:1px solid var(--border); border-radius:10px; padding:4px 8px; font-size:.85rem; color:var(--muted)}
+
+    .footer{margin-top:16px; text-align:center; color:var(--muted); font-size:.9rem}
+
+    @media print{
+      body{background:#fff}
+      .page{margin:0; padding:0}
+      .header, .sidebar, .card{box-shadow:none}
+      .contact a{border:none; padding:0}
+      .controls{display:none !important}
+      @page{size:A4; margin: 12mm}
+      .grid{grid-template-columns: 1fr .0001fr}
+      .sidebar{page-break-inside:avoid}
+      .card{page-break-inside:avoid}
+      .item{page-break-inside:avoid}
+    }
+
+    @media (max-width:900px){
+      .grid{grid-template-columns: 1fr}
+      .sidebar{position:static}
+      .contact{justify-content:flex-start}
+    }
+
+    .controls{display:flex; gap:10px; margin: 14px 0}
+    .btn{border:1px solid var(--border); background:var(--card); border-radius:12px; padding:10px 14px; cursor:pointer; font-weight:600}
+    .btn:hover{outline:2px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="controls" aria-hidden="true">
+      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <header class="header">
+      <div class="title">
+        <div class="name">KEN KEVIN T. CABANALAN</div>
+        <div class="role">FULLSTACK DEVELOPER</div>
+      </div>
+      <nav class="contact" aria-label="contact">
+        <a href="mailto:kenkevincabanalan0@email.com" title="Email">
+          ✉️ kenkevincabanalan0@email.com
+        </a>
+        <a href="tel:+639569320659" title="Phone">
+          📞 +63 956 9320 659
+        </a>
+        <a href="https://github.com/cosme0" title="GitHub" target="_blank">
+          💻 github.com/cosme0
+        </a>
+        <a href="https://www.facebook.com/kenkevin.trasporte" title="Facebook" target="_blank">
+          🌐: kenkevin.cabanalan
+        </a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="sidebar">
+        <div class="avatar">
+          <img src="https://i.imgur.com/4cuwMDf.webp" alt="Ken Kevin Cabnalan">
+        </div>
+
+        <section class="section">
+          <h2>Objectives</h2>
+          <p>Passionate and dedicated professional seeking engaging opportunities to contribute skills and expertise within a dynamic work environment, aiming to drive meaningful impact and growth while continuously learning and evolving. To secure a challenging position in a reputable organization where I can utilize my educational background and develop my skills further, while contributing to the company’s success.</p>
+        </section>
+
+        <section class="section">
+          <h2>Skills</h2>
+          <div class="chipset">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">C#</span>
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Contact</h2>
+          <ul class="list">
+            <li>Caloocan City, PH</li>
+            <li>+63 956 9320 659</li>
+            <li>kenkevincabanalan0@email.com</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Links</h2>
+          <ul class="list">
+            <li><a href="https://github.com/cosme0" target="_blank">GitHub – @cosme0</a></li>
+            <li><a href="https://your-portfolio-link.com" target="_blank">Portfolio – kenportfolio.com</a></li>
+            <li><a href="https://linkedin.com/in/kenkevin" target="_blank">LinkedIn – /in/kenkevin</a></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- Main -->
+      <main class="main" aria-label="main content">
+        <section class="card">
+          <h2>Experience</h2>
+          <div class="item">
+            <div>
+              <div class="place">Department of Education - Divisional Offices</div>
+              <div class="meta">Caloocan City · May 2024 – Present</div>
+              <ul class="bullets">
+                <li>Help with paperwork and organization.</li>
+                <li>file the papers proper,making table and separate to proper brunch.</li>
+              </ul>Organize files and papers properly, making tables and separating them into proper branches.
+            </div>
+            <div class="meta">OJT</div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Projects</h2>
+          <div class="item">
+            <div>
+              <div class="place">Personal website </div>
+              <div class="meta">GitHub · 2024</div>
+              <ul class="bullets">
+                <li><a href="https://cosme0.github.io/finalproject/">https://cosme0.github.io/finalproject/</a></li>
+                <li>Its like a resume in web setting.</li>
+                <li>Reduced time and paper and applicable only online interview settings.</li>
+              </ul>
+            </div>
+            <div class="meta"><a href="#">Live</a> · <a href="#">Code</a></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Education</h2>
+          <div class="item">
+            <div>
+              <div class="place">BS in Information Technology – Global Reciprocal Colleges</div>
+              <div class="meta">Caloocan · Expected 2028</div>
+            </div> 
+          </div>
+          <div class="item">
+            <div>
+                <div class="place">HUMMS(Humanities and Social Sciences) – Caloocan High School</div>
+                <div class="meta">Caloocan · graduated senior high school-2024</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Certifications</h2>
+          <div class="item">
+            <div>
+              <div class="place">Python 1 and Python 2 – Cisco</div>
+              <div class="meta">2024</div>
+            </div>
+            <div class="meta">ID #123456</div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Extras</h2>
+          <div class="item">
+            <div>
+              <div class="place">Lead Guirist/Basist – Solid Rock House Of Glory Church</div>
+              <div class="meta">2019 – 2025</div>
+              <ul class="bullets">
+                <li>Do my hobbies and jamming with God.</li>
+              </ul>
+            </div>
+            <div class="meta">Volunteer</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      © 2025 Ken Kevin T. Cabanalan — Last updated Aug 29, 2025
+    </footer>
+  </div>
+</body>
+</html>
